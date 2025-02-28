@@ -7,6 +7,8 @@ Frontend:
 
 HTML, CSS, and Bootstrap for a sleek, responsive design.
 JavaScript for interactive functionality, ensuring a seamless user experience.
+
+
 Backend:
 
 ASP.NET Core MVC 6.0 – I used the MVC architecture to ensure a clean, scalable codebase.
