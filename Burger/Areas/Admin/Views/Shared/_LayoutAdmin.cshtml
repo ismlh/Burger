@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport"
+    content="width=device-width,
+                   initial-scale=1.0">
+	<title>Admin Dashboard</title>
+
+
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" asp-append-version="true" />
+
+
+
+    <link rel="stylesheet"
+    href="~/Admin/Css/Style.css " asp-append-version="true">
+    <link rel="stylesheet"
+    href="~/Admin/Css/Responsive.css" asp-append-version="true">
+</head>
+
+<body>
+
+    <!-- for header part -->
+    <header>
+
+        @* <i class="fa-solid fa-house"></i> *@
+        <div class="logosec">
+            <i class=" icn menuicn " id="menuicn">Menu</i>
+        </div>
+
+
+
+
+
+    </header>
+
+   
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                   
+                    <a asp-action="Index" asp-controller="Home" asp-area="" onclick="resetLocalStorage()">
+                        <div class="option2 nav-option text-black">
+                            <i class="  icn menuicn " id="menuicn"></i>
+
+                            <h5> Home</h5>
+                        </div>
+                    </a>
+
+
+                    <a asp-action="Index" asp-controller="Meals" asp-area="Admin" onclick="resetLocalStorage()">
+                        <div class="option2 nav-option text-black">
+                            <i class=" icn menuicn " id="menuicn"></i>
+
+                            <h5> Meals</h5>
+                        </div>
+                    </a>
+
+                    <a asp-action="Index" asp-controller="Category" asp-area="Admin" onclick="resetLocalStorage()">
+                        <div class="option2 nav-option text-black">
+                            <i class=" icn menuicn " id="menuicn"></i>
+
+                            <h5> Categories</h5>
+                        </div>
+                    </a>
+                    <a asp-action="Index" asp-controller="Users" asp-area="Admin" onclick="resetLocalStorage()">
+                        <div class="option2 nav-option text-black">
+                            <i class=" icn menuicn " id="menuicn"></i>
+
+                            <h5> Users</h5>
+                        </div>
+                    </a>
+                    <a asp-action="Index" asp-controller="Reservations" asp-area="Admin" onclick="resetLocalStorage()">
+                        <div class="option2 nav-option text-black">
+                            <i class=" icn menuicn " id="menuicn"></i>
+
+                            <h5> Reservations</h5>
+                        </div>
+                    </a>
+
+                    
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            
+                @RenderBody()
+            
+        </div>
+    </div>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/Admin/Js/main.js" asp-append-version="true"></script>
+    <script src="~/assets/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

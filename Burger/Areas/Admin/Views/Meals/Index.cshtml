@@ -1,0 +1,59 @@
+﻿@model ICollection<Meal> 
+@{
+
+    ViewData["Title"] = "Meals Page";
+
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<a class="btn btn-outline-success form-control" asp-action="Create" asp-controller="Meals" asp-area="Admin">Add New Meal</a>
+
+<div class="report-container">
+    <div class="report-header">
+        <h1 class="recent-Articles">Meals</h1>
+    </div>
+
+    <div class="report-body">
+        <table class="table table-bordered text-center ">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody >
+
+           
+                @foreach (var meal in Model)
+            {
+                    <tr>
+                    <td>@meal.Name</td>
+                    <td>@meal.Description</td>
+                    <td>@meal.Price</td>
+                    <td>@meal.Category.Name</td>
+                    <td>
+                        <img src="@Utilites.ImagePath@meal.Image" class="w-50" alt="@meal.Image" />
+                    </td>
+                        <td><a asp-action="Edit" asp-controller="Meals" 
+                            asp-area="Admin" class="btn btn-outline-info"
+                            asp-route-id="@meal.Id">Update</a>
+                        </td>
+                    <td>
+                        <a asp-action="Delete" asp-controller="Meals"
+                               asp-area="Admin" class="btn btn-outline-danger"
+                        asp-route-id="@meal.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+</div>

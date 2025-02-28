@@ -1,0 +1,68 @@
+﻿@model ICollection<ApplicationUser>
+@inject UserManager<ApplicationUser> userManager
+
+@{
+
+    ViewData["Title"] = "Users";
+
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<a class="btn btn-outline-success form-control" asp-action="Create" asp-controller="Users" asp-area="Admin">Add New User</a>
+
+<div class="report-container">
+    <div class="report-header">
+        <h1 class="recent-Articles">Recent Articles</h1>
+    </div>
+
+    <div class="report-body">
+        <table class="table table-bordered text-center ">
+            <tr>
+                <th>FullName</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>Roles</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody >
+
+
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.FullName</td>
+                        <td>@user.Email</td>
+                        <td>@user.PhoneNumber</td>
+                        <td>@foreach (var Role in await userManager.GetRolesAsync(user))
+                            {
+                                <span>{@Role.ToString()} </span>
+
+                                <br />
+
+                            }
+
+                        </td>
+
+                        <td>
+                            <a asp-action="Update" asp-controller="Users"
+                               asp-area="Admin" class="btn btn-outline-info"
+                            asp-route-id="@user.Id">Update</a>
+                        </td>
+                    <td>
+                            <a asp-action="Delete" asp-controller="Users"
+                               asp-area="Admin" class="btn btn-outline-danger"
+                        asp-route-id="@user.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+</div>
+	

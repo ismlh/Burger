@@ -1,0 +1,48 @@
+﻿@model ICollection<Category> 
+
+@{
+
+    ViewData["Title"] = "Category Page";
+
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form asp-action="Create" asp-controller="Category"   method="post">
+    @if (TempData.ContainsKey("Name"))
+    {
+        <input id="Name" name="Name" class="form-control mb-3" placeholder="Meal Category" value="@TempData["Name"]" required />
+        <input id="ID" name="ID" class="form-control mb-3" value="@TempData["ID"]" hidden />
+        <button class="btn btn-outline-success form-control" type="submit">Save</button>
+
+    }
+    else{
+    <input id="Name" name="Name" class="form-control mb-3" placeholder="Meal Category"  required />
+        <button class="btn btn-outline-success form-control" type="submit">add New Category</button>
+
+    }
+    </form>
+
+<div class="report-container">
+    <div class="report-header">
+        <h1 class="recent-Articles">Categories</h1>
+    </div>
+
+    <div class="report-body">
+        <table class="table table-bordered text-center ">
+            <tr>
+                <th>Category Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td class="text-muted text-black">@category.Name</td>
+                    <td><a class="btn btn-outline-info" asp-area="Admin" asp-action="Update" asp-controller="Category" asp-route-id="@category.Id">Edit</a></td>
+                    <td><a class="btn btn-outline-danger" asp-area="Admin" asp-action="Delete" asp-controller="Category" asp-route-id="@category.Id">Delete</a></td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

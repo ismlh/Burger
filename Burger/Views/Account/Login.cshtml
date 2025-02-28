@@ -1,0 +1,36 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container py-5">
+    <h2>Login</h2>
+
+    <form asp-action="Login" method="post" >
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label"></label>
+            <input asp-for="UserName"  class="form-control" required />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+    
+        <div class="form-group">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" type="password"  class="form-control" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+            <div class="form-group">
+            <input type="submit" value="Login" onclick="resetLocalStorage()" class="btn btn-outline-primary form-control" />
+        </div>
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
