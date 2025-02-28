@@ -1,14 +1,26 @@
-Excited to Share My New Project: Burger Site
+🚀 Excited to Share My Latest Project: Burger Site! 🍔
 
-I'm thrilled to share the completion of my new project, Burger Site. This project was developed with a strong focus on both frontend and backend technologies.
+I’m thrilled to announce the completion of my latest project, Burger Site, which I’ve developed using a mix of cutting-edge technologies for both the frontend and backend.
 
-On the frontend, I utilized HTML, CSS, Bootstrap, and JavaScript to create a responsive and dynamic user interface. For the backend, I worked with the MVC pattern in ASP.NET Core 8.0 to ensure a clean and maintainable architecture.
+Tech Stack:
+Frontend:
 
-One of the key features I implemented in this project is the Generic Repository pattern, which helps streamline the management of data access and improve code reusability. Additionally, I integrated Microsoft Identity to manage user authentication, including login and registration processes, ensuring a secure experience for all users.
+HTML, CSS, and Bootstrap for a sleek, responsive design.
+JavaScript for interactive functionality, ensuring a seamless user experience.
+Backend:
 
-For the admin dashboard, I developed a user-friendly interface where admins can:
+ASP.NET Core MVC 6.0 – I used the MVC architecture to ensure a clean, scalable codebase.
+Generic Repository Pattern – This design pattern improves data access and ensures reusability across the application.
+Microsoft Identity – Integrated for secure user authentication, handling login and registration processes.
+Key Features:
+Admin Dashboard:
+Admins can manage meal options (add, edit, delete).
+View and manage customer bookings.
+Add, modify, or delete user data.
+Security & Reliability:
+Implemented both client-side and server-side validation to enhance the security and robustness of the application.
+Why This Project?
+This project was a fantastic opportunity to apply and expand my web development skills. It allowed me to dive deeper into ASP.NET Core, design patterns like the Generic Repository, and best practices for managing user authentication.
 
-Add, edit, and delete meal options
-View and manage reservations
-Edit, delete, or manage user data
-This project was a great opportunity to enhance my skills and put into practice modern web development techniques. I'm excited to continue building on this foundation in future projects!
+Looking Forward:
+I’m excited about continuing to grow and build more projects that challenge me to improve and adopt new technologies
